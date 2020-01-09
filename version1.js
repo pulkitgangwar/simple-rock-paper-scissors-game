@@ -12,7 +12,7 @@ function getPlayersChoice() {
   const playerChoice = prompt("Choose Rock,Paper,Scissors").toUpperCase();
 
   if (!CHOICE.includes(playerChoice)) {
-    alert("you have not chosen correctly ,so we give you ROCK");
+    alert("you have not chosen correctly ,so we give you ROCK as your default choice");
     return DEFAULT_CHOICE;
   } else {
     return playerChoice;
@@ -24,13 +24,6 @@ function getComputersChoice() {
 
   return CHOICE[randomNumber];
 
-  // if (randomNumber <= 0.33) {
-  //   return CHOICE[1];
-  // } else if (randomNumber >= 0.33 && randomNumber <= 0.66) {
-  //   return CHOICE[0];
-  // } else {
-  //   return CHOICE[2];
-  // }
 }
 
 function whoWon(playerChoice, computerChoice) {

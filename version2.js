@@ -10,7 +10,7 @@ let DEFAULT_CHOICE = CHOICE[0];
 function getPlayersChoice(value) {
   if (!CHOICE.includes(value)) {
     alert(
-      "you have not chosen correctly ,so we give you ROCK as default choices"
+      "you have not chosen correctly ,so we give you ROCK as default choice"
     );
     return DEFAULT_CHOICE;
   } else {
