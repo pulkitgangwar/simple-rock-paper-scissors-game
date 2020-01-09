@@ -43,7 +43,7 @@ btn.addEventListener("click", function() {
     title: "game is started"
   });
 
-  swal("Type something:", {
+  swal("Choose Between ROCK,PAPER,SCISSORS", {
     content: "input"
   }).then(value => {
     const playerChoice = getPlayersChoice(value.toUpperCase());
