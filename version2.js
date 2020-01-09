@@ -2,20 +2,13 @@ const btn = document.querySelector(".btn");
 const resultContainer = document.querySelector(".result__container");
 
 // game variables
-let CHOICE_ROCK = "ROCK";
-let CHOICE_PAPER = "PAPER";
-let CHOICE_SCISSORS = "SCISSORS";
-let DEFAULT_CHOICE = "ROCK";
-let WINNING_CONDITION_DRAW = "Draw";
-let WINNING_CONDITION_PLAYER_WINS = "player wins";
-let WINNING_CONDITION_COMPUTER_WINS = "computer wins";
+let startGame = false;
+let CHOICE = ["ROCK", "PAPER", "SCISSORS"];
+let WINNING_CONDITION = ["Draw", "player wins", "computer wins"];
+let DEFAULT_CHOICE = CHOICE[0];
 
 function getPlayersChoice(value) {
-  if (
-    value !== CHOICE_PAPER &&
-    value !== CHOICE_ROCK &&
-    value !== CHOICE_SCISSORS
-  ) {
+  if (!CHOICE.includes(value)) {
     alert(
       "you have not chosen correctly ,so we give you ROCK as default choices"
     );
@@ -26,30 +19,24 @@ function getPlayersChoice(value) {
 }
 
 function getComputersChoice() {
-  const randomNumber = Math.random();
-  if (randomNumber <= 0.33) {
-    return CHOICE_PAPER;
-  } else if (randomNumber >= 0.33 && randomNumber <= 0.66) {
-    return CHOICE_ROCK;
-  } else {
-    return CHOICE_SCISSORS;
-  }
+  const randomNumber = Math.floor(Math.random() * 3);
+
+  return CHOICE[randomNumber];
 }
 
 function whoWon(playerChoice, computerChoice) {
   if (playerChoice === computerChoice) {
-    return WINNING_CONDITION_DRAW;
+    return WINNING_CONDITION[0];
   } else if (
-    (playerChoice === CHOICE_PAPER && computerChoice === CHOICE_ROCK) ||
-    (playerChoice === CHOICE_SCISSORS && computerChoice === CHOICE_PAPER) ||
-    (playerChoice === CHOICE_ROCK && computerChoice === CHOICE_SCISSORS)
+    (playerChoice === CHOICE[1] && computerChoice === CHOICE[0]) ||
+    (playerChoice === CHOICE[2] && computerChoice === CHOICE[1]) ||
+    (playerChoice === CHOICE[0] && computerChoice === CHOICE[2])
   ) {
-    return WINNING_CONDITION_PLAYER_WINS;
+    return WINNING_CONDITION[1];
   } else {
-    return WINNING_CONDITION_COMPUTER_WINS;
+    return WINNING_CONDITION[2];
   }
 }
-
 btn.addEventListener("click", function() {
   swal({
     icon: "success",
@@ -66,9 +53,9 @@ btn.addEventListener("click", function() {
 
       let message = `you have chosen ${playerChoice} and the computer chose ${computerChoice} so therefore`;
 
-      if (won === WINNING_CONDITION_DRAW) {
+      if (won === WINNING_CONDITION[0]) {
         message += ` it is a draw`;
-      } else if (won === WINNING_CONDITION_PLAYER_WINS) {
+      } else if (won === WINNING_CONDITION[1]) {
         message += ` you won`;
       } else {
         message += ` computer won`;
