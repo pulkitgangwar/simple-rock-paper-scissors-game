@@ -3,24 +3,69 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Rock Paper Scissors</title>
-    <link
-      href="https://fonts.googleapis.com/css?family=Fira+Code:500&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="style.css" />
+    <title>Rock Papers And Scissors branchName="newRockPaperScissors"</title>
+    <link href="https://fonts.googleapis.com/css?family=Fira+Code:500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./sass/main.css" />
   </head>
   <body>
-    <div class="btn__wrapper">
-      <button class="btn">Start the Game</button>
-    </div>
+    <main class="mainContainer">
+      <header class="header">
+        <div class="score">
+          <h3 class="score__player score__same">
+            <span class="score__player--number">0</span>
+            <span class="score__player--name">Player</span>
+          </h3>
+          <h3 class="score__computer score__same">
+            <span class="score__computer--number">0</span>
+            <span class="score__computer--name">Computer</span>
+          </h3>
+        </div>
+      </header>
+      <section class="choice">
+        <div class="choice__wrapper">
+          <button class="choice__btn choice__btn--style" value="rock">
+            <i class="far fa-hand-rock"></i>
+          </button>
+          <button class="choice__btn  choice__btn--style" value="paper">
+            <i class="far fa-hand-paper"></i>
+          </button>
+          <button class="choice__btn choice__btn--style" value="scissors">
+            <i class="far fa-hand-scissors"></i>
+          </button>
+        </div>
+      </section>
 
-    <div class="result__wrapper">
-      <h1 class="result__container"></h1>
-    </div>
+      <section class="result">
+        <!-- <div class="result__container">
+          <div class="result__player">
+            <div class=" choice__btn--style">
+              <i class="far fa-hand-paper"></i>
+            </div>
+          </div>
+          <div class="result__text">
+            
+            You Lost
+          </div>
+          <div class="result__computer">
+            <div class=" choice__btn--style">
+              <i class="far fa-hand-scissors"></i>
+            </div>
+          </div> 
+        </div> -->
+      </section>
+    </main>
 
-    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-    <script src="./version2.js"></script>
+    <!-- rock -->
+    <!-- <i class="far fa-hand-rock"></i> -->
+    <!-- paper -->
+    <!-- <i class="far fa-hand-paper"></i> -->
+    <!-- scissors -->
+    <!-- <i class="far fa-hand-scissors"></i> -->
+
+    <script
+      src="https://kit.fontawesome.com/b68743a367.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./javascript/app.js"></script>
   </body>
 </html>

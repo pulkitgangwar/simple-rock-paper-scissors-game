@@ -1,0 +1,12 @@
+// base
+@import "./base/A-variables";
+@import "./base/base";
+
+// components
+@import "./component/score";
+
+// sections
+@import "./sections/choice";
+@import "./sections/final";
+@import "./sections/header";
+@import "./sections/result";
