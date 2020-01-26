@@ -106,10 +106,10 @@ buttons.forEach(btn => {
       () => (scoreContainer.innerHTML = game.scoreUpdate())
     );
 
-    showResultDepandancy(player, computer, gameWinner);
+    showResultDependancy(player, computer, gameWinner);
   });
 });
 
-function showResultDepandancy(player, computer, winnerMessage) {
+function showResultDependancy(player, computer, winnerMessage) {
   resultContainer.innerHTML = game.showResult(player, computer, winnerMessage);
 }
